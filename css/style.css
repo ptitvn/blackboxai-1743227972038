@@ -1,0 +1,109 @@
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9fafb;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #2563eb;
+    color: white;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Form Elements */
+.input-field {
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 8px 12px;
+    width: 100%;
+}
+
+.button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+.button-primary {
+    background-color: #2563eb;
+    color: white;
+}
+
+.button-danger {
+    background-color: #ef4444;
+    color: white;
+}
+
+/* Status Indicators */
+.status-achieved {
+    color: #10b981;
+}
+
+.status-exceeded {
+    color: #ef4444;
+}
+
+/* Card Styles */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Transaction List */
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+/* Responsive Grid */
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+.text-lg {
+    font-size: 1.125rem;
+}
+.font-medium {
+    font-weight: 500;
+}
+.mb-4 {
+    margin-bottom: 1rem;
+}
