@@ -99,10 +99,38 @@ document.addEventListener('DOMContentLoaded', function() {
     if (logoutBtn) {
         logoutBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            if (confirm('Bạn có chắc chắn muốn đăng xuất?')) {
+            
+            // Create custom confirmation modal
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            modal.innerHTML = `
+                <div class="bg-white rounded-lg p-6 max-w-sm w-full">
+                    <h3 class="text-lg font-medium mb-4">Xác nhận đăng xuất</h3>
+                    <p class="text-gray-600 mb-6">Bạn có chắc chắn muốn đăng xuất khỏi hệ thống?</p>
+                    <div class="flex justify-end space-x-3">
+                        <button id="cancel-logout" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
+                            Hủy bỏ
+                        </button>
+                        <button id="confirm-logout" class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">
+                            Đăng xuất
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Handle cancel
+            document.getElementById('cancel-logout').addEventListener('click', () => {
+                document.body.removeChild(modal);
+            });
+            
+            // Handle confirm
+            document.getElementById('confirm-logout').addEventListener('click', () => {
                 localStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('userEmail');
                 window.location.href = 'login.html';
-            }
+            });
         });
     }
 
