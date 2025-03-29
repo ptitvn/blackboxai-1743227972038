@@ -87,23 +87,53 @@ body {
     margin-bottom: 8px;
 }
 
-/* Responsive Grid */
-.grid-4 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+/* Budget Tracking Styles */
+.balance-display {
+    background-color: #f3f4f6;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
-/* Utility Classes */
-.text-center {
-    text-align: center;
-}
-.text-lg {
-    font-size: 1.125rem;
-}
-.font-medium {
+.balance-display p:first-child {
     font-weight: 500;
+    margin-bottom: 0.5rem;
 }
-.mb-4 {
-    margin-bottom: 1rem;
+
+#remaining-balance {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #10b981;
+}
+
+.warning-message {
+    background-color: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #92400e;
+}
+
+.warning-message i {
+    color: #f59e0b;
+}
+
+.input-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.input-group .input-field {
+    flex-grow: 1;
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: #6b7280;
 }
