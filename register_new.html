@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h1>Đăng ký</h1>
+        <form id="registerForm">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Mật khẩu" required>
+            <input type="password" id="confirmPassword" placeholder="Xác nhận mật khẩu" required>
+            <button type="submit">Đăng ký</button>
+        </form>
+        <p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+    </div>
+    <script src="js/auth.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Mật khẩu không khớp');
+                return;
+            }
+            
+            if (auth.register(email, password)) {
+                alert('Đăng ký thành công!');
+                window.location.href = 'login.html';
+            } else {
+                alert('Email đã được đăng ký');
+            }
+        });
+    </script>
+</body>
+</html>
