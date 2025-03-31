@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý chi tiêu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-title">
+            <i class="fas fa-wallet"></i> Quản lý chi tiêu
+        </div>
+        <nav>
+            <span id="username-display"></span>
+            <button id="logoutBtn" class="logout-btn">Đăng xuất</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Existing content -->
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script>
+        // Check authentication
+        if (!auth.isAuthenticated()) {
+            window.location.href = 'login_new.html';
+        }
+
+        // Show current user
+        document.getElementById('username-display').textContent = auth.getCurrentUser();
+
+        // Handle logout
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            auth.logout();
+            window.location.href = 'login_new.html';
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
